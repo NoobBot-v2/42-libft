@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 21:30:13 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/06 22:41:28 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/06 22:32:54 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/06 22:34:35 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-	int	ft_isalpha(int c);
-	int	ft_isdigit(int arg);
-	int	isalnum(int argument);
-	int	tolower(int argument);
-	int	toupper(int ch);
-	int	isascii(int c);
-	int	isprint(int c);
-#endif
+int	isascii(int c)
+{
+	if (0 <= c && c <= 127)
+		return (1);
+	return (0);
+}

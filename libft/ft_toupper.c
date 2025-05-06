@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 21:30:13 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/06 22:41:28 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/06 22:20:29 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/06 22:24:29 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-	int	ft_isalpha(int c);
-	int	ft_isdigit(int arg);
-	int	isalnum(int argument);
-	int	tolower(int argument);
-	int	toupper(int ch);
-	int	isascii(int c);
-	int	isprint(int c);
-#endif
+int	toupper(int ch)
+{
+	if ('a' <= ch && ch <= 'z')
+		return (ch - 32);
+	return (ch);
+}
