@@ -1,0 +1,1 @@
+Current makefile only compiles .c files from libft folder into .o files into obj folder.
