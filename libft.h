@@ -14,9 +14,9 @@
 #define LIBFT_H
 	int	ft_isalpha(int c);
 	int	ft_isdigit(int arg);
-	int	isalnum(int argument);
-	int	tolower(int argument);
-	int	toupper(int ch);
-	int	isascii(int c);
-	int	isprint(int c);
+	int	ft_isalnum(int argument);
+	int	ft_tolower(int argument);
+	int	ft_toupper(int ch);
+	int	ft_isascii(int c);
+	int	ft_isprint(int c);
 #endif
