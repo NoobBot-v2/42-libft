@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsoh@student.42singapore.sg <jsoh@stude    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 22:07:36 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/06 22:23:06 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/09 13:39:54 by jsoh@studen       #+#    #+#             */
+/*   Updated: 2025/05/09 13:39:54 by jsoh@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
+#include <stddef.h>
 
-int	ft_isalnum(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+
 }
+
+/*
+1) No overlap
+2) Src starts before Dest and ends within Dest
+3) Src starts within Dest and ends after Dest
+*/

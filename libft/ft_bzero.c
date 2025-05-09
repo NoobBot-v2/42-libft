@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsoh@student.42singapore.sg <jsoh@stude    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 22:07:36 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/06 22:23:06 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/09 13:26:53 by jsoh@studen       #+#    #+#             */
+/*   Updated: 2025/05/09 13:26:53 by jsoh@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
+#include <stddef.h>
 
-int	ft_isalnum(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	unsigned char	*ptr;
+	size_t	i;
+
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 }

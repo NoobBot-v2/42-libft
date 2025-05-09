@@ -12,17 +12,19 @@
 
 #include <stddef.h>
 
-int	strlen(const char *s);
+size_t	ft_strlen(const char *s);
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	count;
+	size_t	count;
 
-	count = strlen(s) + 1;
-	while (count >= 0)
+	count = ft_strlen(s);
+	while (count > 0)
 	{
-		if (s[count] == c)
-			return (&s[count]);
+		if (s[count] == (char)c)
+			return ((char *)&s[count]);
+		if (count == 0)
+			break;
 		count--;
 	}
 	return (NULL);

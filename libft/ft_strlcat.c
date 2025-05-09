@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strlen(const char *s);
+#include <stddef.h>
 
-int	strlcat(char *dst, char *src, int size)
+size_t	ft_strlen(const char *s);
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	dst_len;
-	int	src_len;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
-	dst_len = strlen(dst);
-	src_len = strlen(src);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	i = 0;
-	while (i < (size - 1) && dst[i] != '\0')
-		i++;
-	if (i == (size - 1) || dst[i] != '\0')
-		return (dst_len + src_len);
-	while (i < (size - 1) && *src != '\0')
+	if (size > dst_len)
 	{
-		dst[i] = *src;
-		src++;
-		i++;
+		while (i < (size - dst_len - 1) && src[i] != '\0')
+		{
+			dst[dst_len + i] = src[i];
+			i++;
+		}
+		dst[dst_len + i] = '\0';
 	}
-	dst[i] = '\0';
 	return (dst_len + src_len);
 }
 
 /*
 Check: strlcat() traverses size characters without finding a NUL,
-the length of the string is considered to be size and the 
+the length of the string is considered to be size and the
 destination string will not be NUL-terminated
 
 Success: strlcat() that means the initial length of dst plus the length of src.
