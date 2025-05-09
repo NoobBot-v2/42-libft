@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh@student.42singapore.sg <jsoh@stude    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 13:39:54 by jsoh@studen       #+#    #+#             */
-/*   Updated: 2025/05/09 13:39:54 by jsoh@studen      ###   ########.fr       */
+/*   Created: 2025/05/09 20:51:23 by jsoh@studen       #+#    #+#             */
+/*   Updated: 2025/05/09 20:51:23 by jsoh@studen      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void *memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*ptr_dst;
-	unsigned char	*ptr_src;
+	unsigned char *ptr_s;
+	unsigned char uc_c;
 	size_t	i;
 
 	i = 0;
-	ptr_dst = (unsigned char*)dest;
-	ptr_src = (unsigned char*)src;
-
-	if (ptr_dst == ptr_src)
-		return (dest);
-	if (ptr_src + n > ptr_dst)
-		while(n > 0)
-		{
-			ptr_dst[n - 1] = ptr_src[n - 1];
-			n--;
-		}
-	else
+	ptr_s = (unsigned char*)s;
+	uc_c = (unsigned char) c;
+	while(i < n)
 	{
-		while(i < n)
-		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
-		}
+		if (ptr_s[i] == uc_c)
+			return ((void *)&ptr_s[i]);
+		i++;
 	}
-	return (dest);
+	return (NULL);
 }
