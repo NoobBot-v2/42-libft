@@ -6,7 +6,7 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 14:54:22 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 15:49:34 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/11 16:50:31 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ static int	isspace(int c)
 {
 	unsigned char	uc_c;
 
+	uc_c = (unsigned char) c;
 	return ((uc_c >= '\t' && uc_c <= '\r') || uc_c == ' ');
 }
 
