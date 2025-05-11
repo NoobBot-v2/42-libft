@@ -6,7 +6,7 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:25:07 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/08 19:45:30 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/11 14:23:15 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 		if (s[count] == (char)c)
 			return ((char *)&s[count]);
 		if (count == 0)
-			break;
+			break ;
 		count--;
 	}
 	return (NULL);

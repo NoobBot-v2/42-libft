@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 13:30:43 by jsoh@studen       #+#    #+#             */
-/*   Updated: 2025/05/11 14:16:36 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/11 14:26:31 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/11 14:52:47 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*ptr_dst;
-	unsigned char	*ptr_src;
-	size_t			i;
+	size_t	i;
+	size_t	little_len;
 
 	i = 0;
-	ptr_dst = (unsigned char *)dest;
-	ptr_src = (unsigned char *)src;
-	while (i < n)
+	little_len = ft_strlen(little);
+	if (little_len == 0)
+		return (big);
+	while (i <= (len - little_len))
 	{
-		ptr_dst[i] = ptr_src[i];
+		if (ft_strncmp(big + i, little, little_len) == 0)
+			return (big + i);
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }
