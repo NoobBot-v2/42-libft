@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 16:54:57 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 20:23:47 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/11 17:13:25 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/11 18:04:03 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 size_t	ft_strlen(const char *s);
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*dup_s;
-	size_t	i;
+	char	*ptr_substr;
 	size_t	len_s;
+	size_t	i;
 
 	i = 0;
-	len_s = ft_strlen(s);
-	dup_s = (char *)malloc(len_s + 1);
-	if (!dup_s)
+	if (!s || start >= ft_strlen(s))
+		return (NULL);
+	len_s = ft_strlen(&s[start]);
+	if (len_s > len)
+		len_s = len;
+	ptr_substr = (char *)malloc(len_s + 1);
+	if (!ptr_substr)
 		return (NULL);
 	while (i < len_s)
 	{
-		dup_s[i] = s[i];
+		ptr_substr[i] = s[start + i];
 		i++;
 	}
-	dup_s[i] = '\0';
-	return (dup_s);
+	ptr_substr[i] = '\0';
+	return (ptr_substr);
 }

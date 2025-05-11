@@ -6,11 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 14:54:22 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 16:50:31 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/11 18:27:54 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	isspace(int c)
+static int	ft_isspace(int c)
 {
 	unsigned char	uc_c;
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	number = 0;
-	while (isspace(*nptr))
+	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '-')
 	{

@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/11 16:54:57 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 20:23:47 by jsoh             ###   ########.fr       */
+/*   Created: 2025/05/11 18:01:12 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/11 18:14:32 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *s);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*dup_s;
-	size_t	i;
-	size_t	len_s;
+	size_t	total_len;
+	char	*joined_s;
 
-	i = 0;
-	len_s = ft_strlen(s);
-	dup_s = (char *)malloc(len_s + 1);
-	if (!dup_s)
+	if (!s1 || !s2)
 		return (NULL);
-	while (i < len_s)
-	{
-		dup_s[i] = s[i];
-		i++;
-	}
-	dup_s[i] = '\0';
-	return (dup_s);
+	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	joined_s = (char *)malloc(total_len);
+	if (!joined_s)
+		return (NULL);
+	ft_strlcpy(joined_s, s1, total_len);
+	ft_strlcat(joined_s, s2, total_len);
+	return (joined_s);
 }
