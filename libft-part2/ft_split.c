@@ -6,7 +6,7 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 19:07:47 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 21:23:49 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/13 22:24:02 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_fill_arr(char **arr, char const *s, char c)
 		while (s[idx_s] != c && s[idx_s] != '\0')
 			idx_s++;
 		arr[idx_arr] = (char *)malloc(idx_s - start + 1);
-		if (!ft_check_arr(arr,idx_arr))
+		if (!ft_check_arr(arr, idx_arr))
 			return (NULL);
 		ft_strlcpy(arr[idx_arr], &s[start], idx_s - start + 1);
 		idx_arr++;
