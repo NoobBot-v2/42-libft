@@ -19,18 +19,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	little_len;
-	char	*ptr_big;
 
-	ptr_big = (char *) big;
 	i = 0;
+	if (!little || !big)
+		return (NULL);
 	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return (ptr_big);
-	while (i <= (len - little_len))
+	if (little_len == 0 || big == little)
+		return ((char *) big);
+	if (len < little_len || !big || !little || len == 0)
+		return (NULL);
+	while (i <= len - little_len && i + little_len <= ft_strlen(big))
 	{
-		if (ft_strncmp(ptr_big + i, little, little_len) == 0)
-			return (ptr_big + i);
+		if (ft_strncmp(big + i, little, little_len) == 0)
+			return ((char *) (big + i));
 		i++;
 	}
 	return (NULL);
 }
+

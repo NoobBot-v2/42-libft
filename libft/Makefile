@@ -13,21 +13,26 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR = libft
-OBJ_DIR = obj
-
-SRC = $(wildcard $(SRC_DIR)/*.c)
-OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-
-NAME = libft.a
+SRC		= $(wildcard *.c)
+OBJ		= $(SRC:.c=.o)
+NAME	= libft.a
+BONUS	= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
+BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):$(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	ar rcs $@ $(OBJ)
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus:
+	@echo "Bonus files:"
+	@for file in $(BONUS); do echo $$file; done
+
+bonus_compile: $(BONUS_OBJ)
+	@echo "Bonus object files compiled: $(BONUS_OBJ)"
 
 clean:
 	rm -f $(OBJ)

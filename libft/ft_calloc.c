@@ -11,18 +11,17 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <limits.h>
 
 void	ft_bzero(void *s, size_t n);
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	if (nmemb > __SIZE_MAX__ / size)
-		return (NULL);
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return NULL;
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);

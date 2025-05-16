@@ -81,7 +81,7 @@ char *ft_itoa(int n)
 	temp_str[i] = temp_n + '0';
 	if (n < 0)
 		temp_str[++i] = '-';
-	ft_reverse(temp_str, i);
+	ft_reverse(temp_str, i + 1);
 	temp_str[++i] = '\0';
 	return (ft_to_strptr(temp_str));
 }

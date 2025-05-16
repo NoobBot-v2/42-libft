@@ -13,27 +13,22 @@
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strdup(const char *s);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr_substr;
 	size_t	len_s;
-	size_t	i;
+	char	*substring;
 
-	i = 0;
-	if (!s || start >= ft_strlen(s))
+	if (!s)
 		return (NULL);
-	len_s = ft_strlen(&s[start]);
-	if (len_s > len)
-		len_s = len;
-	ptr_substr = (char *)malloc(len_s + 1);
-	if (!ptr_substr)
+	len_s = ft_strlen(s);
+	if (start > len_s || len == 0 || len_s == 0)
+		return (ft_strdup(""));
+	substring = (char *)malloc(len + 1);
+	if (!substring)
 		return (NULL);
-	while (i < len_s)
-	{
-		ptr_substr[i] = s[start + i];
-		i++;
-	}
-	ptr_substr[i] = '\0';
-	return (ptr_substr);
+	ft_strlcpy(substring, (s + start), (len + 1));
+	return (substring);
 }
