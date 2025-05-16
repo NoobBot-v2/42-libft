@@ -19,6 +19,7 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	len_s;
+	size_t	max_len;
 	char	*substring;
 
 	if (!s)
@@ -26,6 +27,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_s = ft_strlen(s);
 	if (start > len_s || len == 0 || len_s == 0)
 		return (ft_strdup(""));
+	max_len = len_s - start;
+	if (len > max_len)
+		len = max_len;
 	substring = (char *)malloc(len + 1);
 	if (!substring)
 		return (NULL);
