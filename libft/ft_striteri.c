@@ -1,15 +1,27 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/16 22:35:45 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/16 23:13:44 by jsoh             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int,char*))
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!s || !f)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
-		f(i,&s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

@@ -6,13 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 20:11:01 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 20:23:48 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:13:53 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 static int	ft_has_term(char *dst, size_t size)
 {

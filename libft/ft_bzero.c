@@ -6,11 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 13:26:53 by jsoh@studen       #+#    #+#             */
-/*   Updated: 2025/05/11 16:32:51 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:08:50 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -22,6 +22,6 @@ void	ft_bzero(void *s, size_t n)
 	while (i < n)
 	{
 		ptr[i] = 0;
-		i++;	
+		i++;
 	}
 }

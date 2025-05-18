@@ -1,12 +1,22 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/16 22:36:56 by jsoh              #+#    #+#             */
+/*   Updated: 2025/05/16 23:14:04 by jsoh             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlen(const char *s);
+#include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t i;
-	size_t len;
-	char *ptrstr;
+	size_t	i;
+	size_t	len;
+	char	*ptrstr;
 
 	i = 0;
 	len = ft_strlen(s);
@@ -17,7 +27,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < len)
 	{
-		ptrstr[i] = f(i,s[i]);
+		ptrstr[i] = f(i, s[i]);
 		i++;
 	}
 	ptrstr[i] = '\0';

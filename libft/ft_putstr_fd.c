@@ -6,13 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 22:26:36 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/13 22:38:03 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:13:16 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

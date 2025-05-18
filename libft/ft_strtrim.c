@@ -6,15 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 18:14:50 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 20:40:49 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:14:19 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s);
+#include "libft.h"
 
 int	ft_not_in_set(char c, char const *set)
 {

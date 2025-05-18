@@ -6,13 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:25:07 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/11 14:23:15 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:14:16 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,14 +6,11 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 19:07:47 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/13 22:24:02 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:13:22 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+#include "libft.h"
 
 size_t	ft_count_sections(char const *s, char c)
 {

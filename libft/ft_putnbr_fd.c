@@ -6,18 +6,15 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 22:27:12 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/13 22:38:01 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:12:56 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <limits.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
-
-static unsigned int ft_check_n(int n)
+static unsigned int	ft_check_n(int n)
 {
-	unsigned int temp_n;
+	unsigned int	temp_n;
 
 	if (n == INT_MIN)
 		temp_n = 2147483648U;
@@ -30,9 +27,9 @@ static unsigned int ft_check_n(int n)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int temp_n;
-	char temp_str[12];
-	size_t i;
+	unsigned int	temp_n;
+	char			temp_str[12];
+	size_t			i;
 
 	i = 0;
 	temp_n = ft_check_n(n);

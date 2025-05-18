@@ -6,20 +6,17 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 22:35:47 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/13 22:38:05 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/16 23:11:13 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <limits.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *s);
-
-static void ft_reverse(char s[], int posn)
+static void	ft_reverse(char s[], int posn)
 {
-	int left;
-	int right;
-	char temp;
+	int		left;
+	int		right;
+	char	temp;
 
 	left = 0;
 	right = posn - 1;
@@ -33,10 +30,10 @@ static void ft_reverse(char s[], int posn)
 	}
 }
 
-static char *ft_to_strptr(char s[])
+static char	*ft_to_strptr(char s[])
 {
-	size_t i;
-	char *strptr;
+	size_t	i;
+	char	*strptr;
 
 	i = ft_strlen(s);
 	strptr = (char *)malloc(i + 1);
@@ -52,9 +49,9 @@ static char *ft_to_strptr(char s[])
 	return (strptr);
 }
 
-static unsigned int ft_check_n(int n)
+static unsigned int	ft_check_n(int n)
 {
-	unsigned int temp_n;
+	unsigned int	temp_n;
 
 	if (n == INT_MIN)
 		temp_n = 2147483648U;
@@ -64,11 +61,12 @@ static unsigned int ft_check_n(int n)
 		temp_n = (unsigned)n;
 	return (temp_n);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
-	unsigned int temp_n;
-	char temp_str[12];
-	size_t i;
+	unsigned int	temp_n;
+	char			temp_str[12];
+	size_t			i;
 
 	i = 0;
 	temp_n = ft_check_n(n);
