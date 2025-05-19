@@ -6,13 +6,13 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 19:07:47 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/16 23:13:22 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/19 14:40:14 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_sections(char const *s, char c)
+static size_t	ft_count_sections(char const *s, char c)
 {
 	size_t	idx;
 	size_t	sections;
@@ -31,7 +31,7 @@ size_t	ft_count_sections(char const *s, char c)
 	return (sections);
 }
 
-char	**ft_check_arr(char **arr, size_t idx_arr)
+static char	**ft_check_arr(char **arr, size_t idx_arr)
 {
 	if (!arr[idx_arr])
 	{
@@ -43,7 +43,7 @@ char	**ft_check_arr(char **arr, size_t idx_arr)
 	return (arr);
 }
 
-char	**ft_fill_arr(char **arr, char const *s, char c)
+static char	**ft_fill_arr(char **arr, char const *s, char c)
 {
 	size_t	idx_s;
 	size_t	start;

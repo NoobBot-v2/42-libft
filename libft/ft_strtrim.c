@@ -6,18 +6,18 @@
 /*   By: jsoh <jsoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 18:14:50 by jsoh              #+#    #+#             */
-/*   Updated: 2025/05/16 23:14:19 by jsoh             ###   ########.fr       */
+/*   Updated: 2025/05/19 14:40:52 by jsoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_not_in_set(char c, char const *set)
+static int	ft_not_in_set(char c, char const *set)
 {
 	return (ft_strchr(set, c) == NULL);
 }
 
-size_t	ft_start_idx(char const *s1, char const *set)
+static size_t	ft_start_idx(char const *s1, char const *set)
 {
 	size_t	start_idx;
 
@@ -31,7 +31,7 @@ size_t	ft_start_idx(char const *s1, char const *set)
 	return (start_idx);
 }
 
-size_t	ft_end_idx(char const *s1, char const *set, size_t start_idx)
+static size_t	ft_end_idx(char const *s1, char const *set, size_t start_idx)
 {
 	size_t	end_idx;
 
